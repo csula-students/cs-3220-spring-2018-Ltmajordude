@@ -1,15 +1,16 @@
 Theme:
-# X
+# Magical Pony Hotel
 
 Resource:
-* X
+* Bits
 
 Generators:
-* X
-* X
-* X
+* Ponyville
+* Canterlot
+* Crystal Empire
 
 Story:
-* XXX.
-* XXX.
-* XXX.
+* You opened up a hotel cooperation branch in Equestria. Click the ACTION button to get customers to obtain bits!
+* You became one of the best selling hotel cooperation, according to polls of Ponyville villagers.
+* You obtained the "Most Outstanding Hotel Company" award from Princess Twilight Sparkle.
+* Princess Celestia gave a rave review to one of your hotel.
