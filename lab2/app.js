@@ -1,0 +1,47 @@
+// PubSub is single object for publish data to multiple subscribers
+class PubSub {
+	constructor () {
+		this.subscribers = [];
+	}
+	// subscribe allows a new subscriber to listen for changes by providing
+	// callback function in the parameter
+	subscribe (fn) {
+		this.subscribers.push(fn);
+	}
+	// one can publish any data to subscribers
+	publish (data) {
+		this.subscribers.forEach(subscriber => {
+			subscriber(data);
+		});
+	}
+}
+
+//-------------------------------------------------------------------------
+
+const aBTN = document.querySelector('actionButton');
+const pubSub = new PubSub();
+
+function increaseCounter() {
+	pubSub.publish({
+		type: 'INCREASE_COUNTER',
+		payload: window.incrementalGame.state
+	});
+}
+
+window.incrementalGame = {
+	state: {
+		counter: 0
+	}
+};
+
+pubSub.subscribe(action => {
+	if (action.type !== 'INCREASE_COUNTER') {
+		return;
+	}
+	window.incrementalGame.state.counter ++;
+	console.log(window.incrementalGame.state.counter);
+	document.getElementById("bits").innerHTML = "Bits: " + window.incrementalGame.state.counter;
+	
+});
+
+aBTN.addEventListener('click', increaseCounter());
