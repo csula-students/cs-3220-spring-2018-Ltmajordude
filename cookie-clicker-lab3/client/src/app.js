@@ -1,6 +1,7 @@
 import '@webcomponents/webcomponentsjs';
 
-import '../../dest/app.bundle.js';
+//import '../../dest/app.bundle.js';
+import 'dest/app.bundle.js';
 
 import {loop} from './game';
 import Store from './store';
