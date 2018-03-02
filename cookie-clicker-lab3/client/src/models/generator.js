@@ -28,7 +28,7 @@ export default class Generator {
 	 */
 	getCost () {
 		// TODO: implement the function according to doc above
-		//   value = this.baseCost(1+constants.growthRatio)^this.quantity
+		// return_value = this.baseCost(1+constants.growthRatio)^this.quantity
 		//return 0;
 		return this.baseCost(1+constants.growthRatio)^this.quantity;
 	}
@@ -40,6 +40,7 @@ export default class Generator {
 	 */
 	generate () {
 		// TODO: implement based on doc above
+		// return_value = this.rate*this.quantity
 		//return 0;
 		return this.rate*this.quantity;
 	}

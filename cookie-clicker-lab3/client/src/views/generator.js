@@ -1,25 +1,26 @@
 export default function (store) {
 	return class GeneratorComponent extends window.HTMLElement {
+
 		constructor () {
+
 			super();
 
-			console.log("test");
+			//console.log("test");
 
 			this.store = store;
 
 			// TODO: render generator initial view
 
-			// +++ TODO: subscribe to store on change event
+			// TODO: subscribe to store on change event
 
-			// +++ TODO: add click event
+			// TODO: add click event
 
             this.onStateChange = this.handleStateChange.bind(this);
+
             this.addEventListener('click', () => {
-                if (storedHotelID == this.dataset.id) {
-                    this.store.dispatch({
-                        type: 'BUY_GENERATOR',
-                    });
-                }
+                this.store.dispatch({
+                    type: 'BUY_GENERATOR',
+                });
 
             });
 
@@ -36,11 +37,13 @@ export default function (store) {
         }
 
         connectedCallback () {
+            //console.log("test");
             console.log('GeneratorComponent#onConnectedCallback');
             this.store.subscribe(this.onStateChange);
         }
 
         disconnectedCallback () {
+            //console.log("test");
             console.log('GeneratorComponent#onDisconnectedCallback');
             this.store.unsubscribe(this.onStateChange);
         }

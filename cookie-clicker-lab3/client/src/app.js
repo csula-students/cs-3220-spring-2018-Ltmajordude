@@ -74,14 +74,6 @@ import StoryBookComponent from './views/story-book';
 
 main();
 
-console.log("test");
-
-increaseCounter1();
-
-import function increaseCounter1(){
-	console.log("test");
-}
-
 // main function wraps everything at top level
 function main () {
 
@@ -89,8 +81,33 @@ function main () {
 	const initialState = {
 		example: 'Pony Hotel',
 		counter: 0,
-		generators: [ponyville, canterlot, crystalEmpire],
-		story: [best-selling-hotel, outstanding-company, princess-celestia]
+		generators: [
+			{
+	            name: 'Ponyville',
+	            description: "Home of Princess Twilight Sparkle of Friendship, the Ambassadors of Harmony, Twilight Sparkle's apprentice Starlight Glimmer and Spike the Dragon, hero of the Crystal Empire.",
+	            rate: 5,
+	            baseCost: 10,
+	            quantity: 0,
+	            unlockValue: 10
+			}
+			{
+	            name: 'Canterlot',
+	            description: "Home of Princess Celestia of the Sun and Princess Luna of the Moon.",
+	            rate: 10,
+	            baseCost: 100,
+	            quantity: 0,
+	            unlockValue: 25
+			}
+			{
+	            name: 'Crystal Empire',
+	            description: "Home of Princess Cadance of Love and Captain Shining Armor, commander of the Royal Guard.",
+	            rate: 20,
+	            baseCost: 500,
+	            quantity: 0,
+	            unlockValue: 50
+			}
+		],
+		story: []
 	};
 
 	// initialize store
