@@ -81,8 +81,6 @@ function main () {
             console.log("testing");
     });
 	*/
-	
-	//console.log("testing");
 
 	// TODO: fill the blank based on the theme you have choosen
 	const initialState = {
