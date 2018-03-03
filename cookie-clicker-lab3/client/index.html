@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<link rel="stylesheet" href="src/app.css">
+
+<head>
+	<meta charset="UTF-8">
+	<title>Lab 3</title>
+</head>
+
+<body>
+
+	<!-- <h1>Hello world!</h1> -->
+
+	<h1>Magical Pony Hotel~</h1>
+
+	<p id = "systemText">
+		* You opened up a hotel cooperation branch in Equestria. Click the ACTION button to get customers to obtain bits!
+		<br>
+		* You became one of the best selling hotel cooperation, according to polls of Ponyville villagers.
+		<br>
+		* You obtained the "Most Outstanding Hotel Company" award from Princess Twilight Sparkle.
+		<br>
+		* Princess Celestia gave a rave review to one of your hotel.
+		<br>
+		<br>
+		<br>
+		<br>
+		<br>
+	</p>
+	
+	<p id = "bits">Bits: 0</p>
+	<game-button><button type = "button" id="actionButton" >ACTION</button></game-button>
+
+	<table>
+	    <tr>
+	        <th>Location</th>
+	        <th>Description</th>
+	        <th>Bit Rate (per 60 seconds)</th>
+	        <th>Price</th>
+	        <th>Quantity</th>
+	        <th>Buy a Hotel Branch?</th>
+	    </tr>
+	    <tr>
+	        <td>Ponyville</td>
+	        <td>Home of Princess Twilight Sparkle of Friendship, the Ambassadors of Harmony, Twilight Sparkle's apprentice Starlight Glimmer and Spike the Dragon, hero of the Crystal Empire.</td>
+	        <td>5</td>
+	        <td>10</td>
+	        <td>0</td>
+	        <td><game-generator data-id="0" ><button>BUY</button></game-generator></td>
+	    </tr>
+	    <tr>
+	        <td>Canterlot</td>
+	        <td>Home of Princess Celestia of the Sun and Princess Luna of the Moon.</td>
+	        <td>10</td>
+	        <td>100</td>
+	        <td>0</td>
+	        <td><game-generator data-id="1" ><button>BUY</button></game-generator></td>
+	    </tr>
+	    <tr>
+	        <td>Crystal Empire</td>
+	        <td>Home of Princess Cadance of Love and Captain Shining Armor, commander of the Royal Guard.</td>
+	        <td>20</td>
+	        <td>500</td>
+	        <td>0</td>
+	        <td><game-generator data-id="2" ><button>BUY</button></game-generator></td>
+	    </tr>
+
+	</table>
+
+</body>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/webcomponentsjs/1.1.0/webcomponents-lite.js"></script>
+
+<script src ="../dest/app.bundle.js"> </script>
+
+</html>
