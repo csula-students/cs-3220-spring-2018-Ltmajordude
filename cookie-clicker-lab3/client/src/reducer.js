@@ -2,22 +2,17 @@ export default function reducer (state, action) {
 	switch (action.type) {
 
 	case 'EXAMPLE_MUTATION':
-		state.example = 'mutated';
+
+		state.example = action.payload;
 		return state;
-
+	
 	case 'BUY_GENERATOR':
-		
-		//payload
 
-		
-		if(state.counter >= state.generators.baseCost) {
-			if(state.generators.quantity==null) {state.generators.quantity = 0;}
+		if (state.generators.name == action.payload.name) {
 			state.counter = state.counter - state.generators.baseCost;
-			state.generators.quantity++;
-			state.generators.baseCost = getCost();
+			state.generators.quantity = state.generators.quantity + action.payload.quantity;
 		}
 		
-
 		return state;
 
 	default:

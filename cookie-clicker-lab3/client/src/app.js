@@ -75,6 +75,15 @@ main();
 // main function wraps everything at top level
 function main () {
 
+	/*
+	this.querySelector('button').addEventListener('click', () => {
+            //console.log(this);
+            console.log("testing");
+    });
+	*/
+	
+	//console.log("testing");
+
 	// TODO: fill the blank based on the theme you have choosen
 	const initialState = {
 		example: 'Pony Hotel',
