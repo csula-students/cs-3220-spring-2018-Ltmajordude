@@ -75,14 +75,6 @@ main();
 // main function wraps everything at top level
 function main () {
 
-	/*
-	this.querySelector('button').addEventListener('click', () => {
-            //console.log(this);
-            console.log("testing");
-    });
-	*/
-
-	// TODO: fill the blank based on the theme you have choosen
 	const initialState = {
 		example: 'Pony Hotel',
 		counter: 0,
@@ -94,7 +86,7 @@ function main () {
 	            baseCost: 10,
 	            quantity: 0,
 	            unlockValue: 10
-			}
+			},
 			{
 	            name: 'Canterlot',
 	            description: "Home of Princess Celestia of the Sun and Princess Luna of the Moon.",
@@ -102,7 +94,7 @@ function main () {
 	            baseCost: 100,
 	            quantity: 0,
 	            unlockValue: 25
-			}
+			},
 			{
 	            name: 'Crystal Empire',
 	            description: "Home of Princess Cadance of Love and Captain Shining Armor, commander of the Royal Guard.",
@@ -118,8 +110,6 @@ function main () {
 	// initialize store
 	const store = new Store(reducer, initialState);
 	console.log(ExampleComponent(store));
-
-	//console.log("test");
 
 	// define web components
 	window.customElements.define('component-example', ExampleComponent(store));

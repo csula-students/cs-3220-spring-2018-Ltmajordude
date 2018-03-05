@@ -4,46 +4,36 @@ export default function (store) {
 		constructor () {
 
 			super();
-
-			//console.log("test");
-
 			this.store = store;
-
-			// TODO: render generator initial view
-
-			// TODO: subscribe to store on change event
-
-			// TODO: add click event
 
             this.onStateChange = this.handleStateChange.bind(this);
 
+            
             this.addEventListener('click', () => {
                 this.store.dispatch({
                     type: 'BUY_GENERATOR',
+                    payload: {
+                        name: this.store.state.generators[this.dataset.id].name,
+                        quantity: 1
+                    },
                 });
-
             });
+            
 
 		}
 
 		handleStateChange (newState) {
 
-            //console.log("id = " + this.dataset.id + " : You bought a hotel! You own " + this.store.state.hotelCount + " hotel(s).")
-            //console.log('HotelComponent#stateChange', this, this.store.state);
-
-            console.log("You bought a hotel!");
-            console.log("");
+            console.log('GeneratorComponent#stateChange', this, newState);
 
         }
 
         connectedCallback () {
-            //console.log("test");
             console.log('GeneratorComponent#onConnectedCallback');
             this.store.subscribe(this.onStateChange);
         }
 
         disconnectedCallback () {
-            //console.log("test");
             console.log('GeneratorComponent#onDisconnectedCallback');
             this.store.unsubscribe(this.onStateChange);
         }
