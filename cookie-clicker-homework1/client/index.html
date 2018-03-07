@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<link rel="stylesheet" href="app.css">
+
+<head>
+	<meta charset="UTF-8">
+	<title>Homework 1</title>
+</head>
+
+<body>
+
+	<!-- <h1>Hello world!</h1> -->
+
+	<h1>Magical Pony Hotel~</h1>
+
+	<p id = "systemText">
+		<game-story-book>
+		- You opened up a hotel cooperation branch in Equestria. Click the ACTION button to get customers to obtain bits!
+		<br>
+		</game-story-book>
+	</p>
+	
+	<p><game-counter id = "bits">Bits: 0</game-counter></p>
+	<game-button><button>ACTION</button></game-button>
+	<!-- <button type = "button" id="actionButton">ACTION</button> -->
+	<p id="auto">Bits earned automatically per second: 0</p>
+
+	<table>
+	    <tr>
+	        <th>Location</th>
+	        <th>Description</th>
+	        <th>Hotel Branch's Bit Rate (per 60 seconds)</th>
+	        <th>Quantity</th>
+	        <th>Price to Own</th>
+	        <th>Buy a Hotel Branch?</th>
+	    </tr>
+	    <tr>
+	        <td>Ponyville</td>
+	        <td>Home of Princess Twilight Sparkle of Friendship, the Ambassadors of Harmony, Twilight Sparkle's apprentice Starlight Glimmer and Spike the Dragon, hero of the Crystal Empire.</td>
+	        <td>5</td>
+	        <td id="quantity-0">0</td>
+	        <td id="price-0">10</td>
+	        <td><game-generator data-id="0" data-message="button" ><button>BUY</button></game-generator></td>
+	    </tr>
+	    <tr>
+	        <td>Canterlot</td>
+	        <td>Home of Princess Celestia of the Sun and Princess Luna of the Moon.</td>
+	        <td>10</td>
+	        <td id="quantity-1">0</td>
+	        <td id="price-1">100</td>
+	        <td><game-generator data-id="1" ><button>BUY</button></game-generator></td>
+	    </tr>
+	    <tr>
+	        <td>Crystal Empire</td>
+	        <td>Home of Princess Cadance of Love and Captain Shining Armor, commander of the Royal Guard.</td>
+	        <td>20</td>
+	        <td id="quantity-2">0</td>
+	        <td id="price-2">500</td>
+	        <td><game-generator data-id="2" ><button>BUY</button></game-generator></td>
+	    </tr>
+
+	</table>
+
+</body>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/webcomponentsjs/1.1.0/webcomponents-lite.js"></script>
+
+<script src ="../dest/app.bundle.js"> </script>
+
+</html>
