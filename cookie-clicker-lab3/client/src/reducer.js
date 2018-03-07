@@ -32,6 +32,7 @@ export default function reducer (state, action) {
 		return state;
 
 	case 'COUNTER_UP':
+		//my own implementation for increasing the counter
 		state.counter = state.counter+action.payload.quantity;
 		return state;
 
