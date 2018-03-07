@@ -1,0 +1,41 @@
+* {
+	background-color: #00FFFF;
+}
+h1 {
+	font-style: bold;
+	font-size: 30px;
+	color: #ffaeb9;
+}
+table, th, td {
+	border: 1px solid black;
+	text-align: center;
+}
+th {
+	background-color: #ff1493;
+}
+td {
+	background-color: #ffb6c1;
+}
+button{
+	color: #FFFFFF;
+	background-color: #EE82EE;
+	font-size: 30px;
+}
+#action {
+	font-size: 30px;
+	background-color: #4B0082;
+	float: right;
+}
+#systemText, game-story-book {
+	color: #FFFFFF;
+	background-color: #000000;
+}
+#bits{
+	font-size: 36px;
+	color: #228B22;
+}
+game-generator {
+	color: #FFFFFF;
+	background-color: #EE82EE;
+	font-size: 30px;
+}
