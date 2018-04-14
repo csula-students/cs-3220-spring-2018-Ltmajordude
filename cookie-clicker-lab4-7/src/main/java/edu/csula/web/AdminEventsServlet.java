@@ -40,7 +40,7 @@ public class AdminEventsServlet extends HttpServlet {
 		String output = "";
 
 		// Start text output
-		output += "<link rel='stylesheet' type='text/css' href='" + request.getContextPath() +  "/WEB-INF/app.css'/>";
+		output += "<link rel='stylesheet' type='text/css' href='" + request.getContextPath() +  "/app.css'/>";
 		output += "<h1>Cookie Clicker Events Servlet (Lab 4)</h1><p>Table of Events</p>";
 
 		//Table of Events
