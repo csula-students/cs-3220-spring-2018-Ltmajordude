@@ -18,6 +18,7 @@ import edu.csula.models.Event;
 @WebServlet(loadOnStartup=1, urlPatterns={"/admin/events"})
 public class AdminEventsServlet extends HttpServlet {
 
+	
 	public void init() {
 		EventsDAO dao = new EventsDAOImpl(getServletContext());
 		Collection<Event> events = dao.getAll();
@@ -27,9 +28,34 @@ public class AdminEventsServlet extends HttpServlet {
 		getServletContext().setAttribute("events", events);
 	}
 	
+	
 	@Override
 	public void doGet( HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		
+
+		/*
+		doGet(req, res) {
+		    data := dao.getAll()
+ 		   req.put("data", data)
+    		res.dispatch("jsp").forward(req, res)
+		}
+		*/
+
+        //Event events = new Event(0, "Ponyville Polls", "+ You became one of the best selling hotel cooperation, according to polls of Ponyville villagers.", 60);
+
+		Collection<Event> events = (Collection<Event>) getServletContext().getAttribute("events");
+		/*
+		EventsDAO dao = new EventsDAOImpl(getServletContext());
+		Collection<Event> events = dao.getAll();
+			events.add( new Event(events.size(), "Ponyville Polls", "+ You became one of the best selling hotel cooperation, according to polls of Ponyville villagers.", 60) );
+			events.add( new Event(events.size(), "Twilight Award", "++ You obtained the \"Most Outstanding Hotel Company\" award from Princess Twilight Sparkle.", 300) );
+			events.add( new Event(events.size(), "Celestia Review", "+++ Princess Celestia gave a rave review to one of your hotel.", 600) );
+		*/
+        request.setAttribute("events", events);
+        request.getRequestDispatcher("/WEB-INF/admin-events.jsp").forward(request, response);
+
+
+		/*
+
 		// Activate Display PrintWriter
 		response.setContentType("text/html");
 		PrintWriter out = response.getWriter();
@@ -85,11 +111,29 @@ public class AdminEventsServlet extends HttpServlet {
 
 		out.println(output);
 
+		*/
+
 	}
 
 
 	@Override
 	public void doPost( HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+
+		/*
+		String name = request.getParameter("name");
+		String description = request.getParameter("description");
+		int triggerAt = Integer.parseInt(request.getParameter("triggerAt"));
+
+		request.setAttribute("name", name);
+		request.setAttribute("description", description);
+		request.setAttribute("triggerAt", triggerAt);
+
+		request.getRequestDispatcher("WEB-INF/admin-events.jsp")
+        	.forward(request, response);
+		*/
+		
+
+		
 
 		// Duplicate event collection
 		Collection<Event> entries = (Collection<Event>) getServletContext().getAttribute("events");
@@ -104,6 +148,10 @@ public class AdminEventsServlet extends HttpServlet {
 
 		// Update event collection
 		response.sendRedirect("./events");
+
+		
+
+		//
 
 	}
 }
