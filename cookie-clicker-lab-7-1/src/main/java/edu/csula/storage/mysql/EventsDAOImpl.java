@@ -68,14 +68,31 @@ public class EventsDAOImpl implements EventsDAO {
 			Statement stmt = c.createStatement()) {
 
 			ResultSet rs = stmt.executeQuery(
-				"SELECT * FROM events WHERE id=1");
+				"SELECT id, name, description, trigger_at FROM events WHERE id=1");
 
+			//ResultSet rs = stmt.executeQuery("DROP TABLE events");
+
+			
 			Event event = new Event(
         		rs.getInt(1),
         		rs.getString(2),
         		rs.getString(3),
         		rs.getInt(4)
         	);
+        	
+
+        	/*
+			Event event = null;
+        	while (rs.next()) {
+				event = new Event(
+            		rs.getInt(1),
+            		rs.getString(2),
+            		rs.getString(3),
+            		rs.getInt(4)
+            	);
+			}
+			*/
+
 
 			//stmt.setInt(1, id);
 			//stmt.executeQuery();
@@ -97,7 +114,7 @@ public class EventsDAOImpl implements EventsDAO {
 			}
 			*/
 			return Optional.of(event); 
-
+			//return Optional.empty();
 		} catch (SQLException e) {
 			e.printStackTrace();
 			return Optional.empty();
@@ -109,6 +126,9 @@ public class EventsDAOImpl implements EventsDAO {
 	@Override
 	public void set(int id, Event event) {
 		// TODO: update specific event by id
+
+		//
+
 	}
 
 	@Override
