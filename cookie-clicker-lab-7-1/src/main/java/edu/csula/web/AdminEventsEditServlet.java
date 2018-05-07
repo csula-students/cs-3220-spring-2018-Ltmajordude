@@ -10,9 +10,6 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-//import edu.csula.storage.servlet.EventsDAOImpl;
-//import edu.csula.storage.EventsDAO;
-//import edu.csula.models.Event;
 import edu.csula.models.Event;
 import edu.csula.storage.EventsDAO;
 import edu.csula.storage.mysql.EventsDAOImpl;
