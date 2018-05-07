@@ -71,6 +71,7 @@ public class EventsDAOImpl implements EventsDAO {
         		rs.getString(3),
         		rs.getInt(4)
         	);
+        	
         	return Optional.of(event);
 				
 		} catch (SQLException e) {
