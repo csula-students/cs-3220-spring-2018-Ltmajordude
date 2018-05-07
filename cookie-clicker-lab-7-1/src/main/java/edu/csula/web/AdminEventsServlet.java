@@ -19,16 +19,14 @@ import edu.csula.storage.mysql.Database;
 @WebServlet(loadOnStartup=1, urlPatterns={"/admin/events"})
 public class AdminEventsServlet extends HttpServlet {
 
-	/*
+	
 	public void init() {
-		//Database context = new Database();
 		EventsDAO dao = new EventsDAOImpl(new Database());
 		dao.add( new Event( 0, "Ponyville Polls", "+ You became one of the best selling hotel cooperation, according to polls of Ponyville villagers.", 60) );
 		dao.add( new Event( 1, "Twilight Award", "++ You obtained the \"Most Outstanding Hotel Company\" award from Princess Twilight Sparkle.", 300) );
 		dao.add( new Event( 2, "Celestia Review", "+++ Princess Celestia gave a rave review to one of your hotel.", 600) );
 	}
-	*/
-	
+
 	
 	@Override
 	public void doGet( HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {

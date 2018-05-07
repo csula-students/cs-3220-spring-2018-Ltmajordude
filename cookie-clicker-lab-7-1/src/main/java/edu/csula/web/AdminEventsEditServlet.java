@@ -25,25 +25,9 @@ public class AdminEventsEditServlet extends HttpServlet {
 	@Override
 	public void doGet( HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 
-		/*
-		Collection<Event> entries = (Collection<Event>) getServletContext().getAttribute("events");
-
-		int id = Integer.parseInt(request.getParameter("id"));
-
-		Event entry = null;
-
-		for (Event e: entries) {
-			if (e.getId() == id) {
-				entry = e;
-			}
-		}
-		*/
-
 		int id = Integer.parseInt(request.getParameter("id"));
 
 		EventsDAO dao = new EventsDAOImpl(new Database());
-
-		//Event entry = dao.getById(id);
 
 		request.setAttribute("entry", dao.getById(id));
         request.getRequestDispatcher("/WEB-INF/admin-events-edit.jsp").forward(request, response);
@@ -72,7 +56,15 @@ public class AdminEventsEditServlet extends HttpServlet {
 		String description = request.getParameter("description");
 		int triggerAt = Integer.parseInt(request.getParameter("triggerAt"));
 
+		int id = Integer.parseInt(request.getParameter("id"));
+
 		EventsDAO dao = new EventsDAOImpl(new Database());
+
+		Event event = new Event( dao.getAll().size(), name, description, triggerAt );
+
+		dao.set(id, event);
+
+		response.sendRedirect("../events");
 
 		/*
 		Collection<Event> entries = (Collection<Event>) getServletContext().getAttribute("events");

@@ -32,31 +32,6 @@ public class AdminEventsDeleteServlet extends HttpServlet {
 
 		response.sendRedirect("../events");
 
-		/*
-
-		Collection<Event> entries = (Collection<Event>) getServletContext().getAttribute("events");
-		
-		int id = Integer.parseInt(request.getParameter("id"));
-
-		
-		//for (Event e : entries) {
-		//	if (e.getId() == id)
-		//		entries.remove(e);
-		//}
-		
-		
-		Iterator i = entries.iterator();
-		while( i.hasNext() ) {
-			Event e = (Event) i.next();
-
-			if (e.getId() == id)
-				entries.remove(e);
-
-		}
-
-		response.sendRedirect("../events");
-		*/
-
 	}
 
 }
