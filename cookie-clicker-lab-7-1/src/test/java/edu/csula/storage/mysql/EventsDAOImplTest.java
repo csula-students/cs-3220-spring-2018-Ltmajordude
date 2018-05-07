@@ -52,6 +52,7 @@ public class EventsDAOImplTest {
 
 		// assert and verify
 		assertEquals(1, actualEvents.size());
+		
 	}
 
 	@Test
