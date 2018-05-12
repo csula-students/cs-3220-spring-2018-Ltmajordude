@@ -25,9 +25,8 @@ class PubSub {
 
 //-------------------------------------------------------------------------
 
-// I am unable to understand how to use app.js further besides using the PubSub functions and the below coding.
+const initialState = window.game.state;
 
-/*
 const aBTN = document.querySelector('actionButton');
 const pubSub = new PubSub();
 
@@ -55,4 +54,3 @@ pubSub.subscribe(action => {
 });
 
 aBTN.addEventListener('click', increaseCounter());
-*/

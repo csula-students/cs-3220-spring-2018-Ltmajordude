@@ -9,8 +9,7 @@
   "scripts": {
     "pretest": "npm install",
     "test": "jest",
-    "build": "webpack",
-    "watch": "webpack --watch"
+    "build": "webpack"
   },
   "author": "Eric Liao <rcliao01@gmail.com>",
   "license": "MIT",

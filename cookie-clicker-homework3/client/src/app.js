@@ -69,16 +69,61 @@ import StoryBookComponent from './views/story-book';
           |                  |
           +------------------+
  */
+
 main();
 
 // main function wraps everything at top level
 function main () {
-	// TODO: fill the blank based on the theme you have choosen
+
 	const initialState = {
-		example: 'Hello custom element',
+		example: 'Pony Hotel',
 		counter: 0,
-		generators: [],
-		stories: []
+		generators: [
+			{
+	            name: 'Ponyville',
+	            description: "Home of Princess Twilight Sparkle of Friendship, the Ambassadors of Harmony, Twilight Sparkle's apprentice Starlight Glimmer and Spike the Dragon, hero of the Crystal Empire.",
+	            rate: 5,
+	            baseCost: 10,
+	            quantity: 0,
+	            unlockValue: 10
+			},
+			{
+	            name: 'Canterlot',
+	            description: "Home of Princess Celestia of the Sun and Princess Luna of the Moon.",
+	            rate: 10,
+	            baseCost: 100,
+	            quantity: 0,
+	            unlockValue: 25
+			},
+			{
+	            name: 'Crystal Empire',
+	            description: "Home of Princess Cadance of Love and Captain Shining Armor, commander of the Royal Guard.",
+	            rate: 20,
+	            baseCost: 500,
+	            quantity: 0,
+	            unlockValue: 50
+			}
+		],
+		story: [
+			{
+				name: 'Ponyville Polls',
+				description: '+ You became one of the best selling hotel cooperation, according to polls of Ponyville villagers.',
+				triggeredAt: 60,
+				state: 'hidden'
+			},
+			{
+				name: 'Twilight Award',
+				description: '++ You obtained the "Most Outstanding Hotel Company" award from Princess Twilight Sparkle.',
+				triggeredAt: 300,
+				state: 'hidden'
+			},
+			{
+				name: 'Celestia Review',
+				description: '+++ Princess Celestia gave a rave review to one of your hotel.',
+				triggeredAt: 600,
+				state: 'hidden'
+			}
+		]
 	};
 
 	// initialize store

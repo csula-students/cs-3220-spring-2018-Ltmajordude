@@ -9,16 +9,27 @@ export default function (store) {
 		}
 
 		handleStateChange (newState) {
-			// TODO: display story based on the state "resource" and "stories"
+
+			var html_TEXT = this.innerHTML;
+
+			this.store.state.story.forEach(function(item) {
+				if (item.state == "visible") {
+					html_TEXT = item.description;
+				}
+			});
+
+			this.innerHTML = html_TEXT;
+
 		}
 
 		connectedCallback () {
+			console.log('StoryBookComponent#onConnectedCallback');
 			this.store.subscribe(this.onStateChange);
 		}
 
 		disconnectedCallback () {
+			console.log('StoryBookComponent#onDisconnectedCallback');
 			this.store.unsubscribe(this.onStateChange);
 		}
 	};
 }
-
