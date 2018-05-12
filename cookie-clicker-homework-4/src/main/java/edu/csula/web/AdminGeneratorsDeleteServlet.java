@@ -23,19 +23,6 @@ public class AdminGeneratorsDeleteServlet extends HttpServlet {
 	@Override
 	public void doGet( HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 
-		/*
-		List<Generator> entries = (List<Generator>) getServletContext().getAttribute("generators");
-
-		int id = Integer.parseInt(request.getParameter("id"));
-		
-		for (int i = 0 ; i < entries.size(); i++) {
-			if (entries.get(i).getId() == id)
-				entries.remove(i);
-		}
-
-		response.sendRedirect("../generators");
-		*/
-
 		GeneratorsDAO dao = new GeneratorsDAOImpl(new Database());
 		int id = Integer.parseInt(request.getParameter("id"));
 		dao.remove(id);
