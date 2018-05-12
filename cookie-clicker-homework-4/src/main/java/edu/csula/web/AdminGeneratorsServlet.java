@@ -41,7 +41,6 @@ public class AdminGeneratorsServlet extends HttpServlet {
 
 	@Override
 	public void doPost( HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		// TODO: handle upsert transaction
 
 		// Obtain parameters
 		String name = request.getParameter("name");
