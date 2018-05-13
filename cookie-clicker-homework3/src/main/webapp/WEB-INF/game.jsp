@@ -9,20 +9,11 @@
 </head>
 <body>
 
+	<script src="app.bundle.js"> </script>
+
 	<script>
 
-		/*
-		Once you have the JSON string, you can pass the JSON string 
-		   back to the game.jsp file in the request scope and render 
-		   such JSON string in the script tag to pass JSON information 
-		   to JavaScript.
-		*/
-
-	    window.game = {};
-	    window.game.state = ${state}; // where state is passed from Controller as JSON string
-
-
-	    //Besides using the example coding, I am unable to understand how to proceed further with this part.
+	    window.game.state = ${state};
 	    
 	</script>
 

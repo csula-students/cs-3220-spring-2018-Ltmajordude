@@ -1,27 +1,47 @@
+import Generator from '../models/generator'; 
 export default function (store) {
 	return class GeneratorComponent extends window.HTMLElement {
+
 		constructor () {
+
 			super();
 			this.store = store;
-			this.onStateChange = this.handleStateChange.bind(this);
 
-			// TODO: render generator initial view
+            this.onStateChange = this.handleStateChange.bind(this);
+  
+            this.addEventListener('click', () => {
 
-			// TODO: subscribe to store on change event
+                this.store.dispatch({
+                    type: 'BUY_GENERATOR',
+                    payload: {
+                        name: this.store.state.generators[this.dataset.id].name,
+                        quantity: 1
+                    },
+                });
 
-			// TODO: add click event
+                document.getElementById("price-" + this.dataset.id).innerHTML = this.store.state.generators[this.dataset.id].baseCost;
+                document.getElementById("quantity-" + this.dataset.id).innerHTML = this.store.state.generators[this.dataset.id].quantity;
+
+            });
+
 
 		}
 
 		handleStateChange (newState) {
-		}
 
-		connectedCallback () {
-			this.store.subscribe(this.onStateChange);
-		}
+            //console.log('GeneratorComponent#stateChange', this, newState);
 
-		disconnectedCallback () {
-			this.store.unsubscribe(this.onStateChange);
-		}
+        }
+
+        connectedCallback () {
+            console.log('GeneratorComponent#onConnectedCallback');
+            this.store.subscribe(this.onStateChange);
+        }
+
+        disconnectedCallback () {
+            console.log('GeneratorComponent#onDisconnectedCallback');
+            this.store.unsubscribe(this.onStateChange);
+        }
+
 	};
 }
